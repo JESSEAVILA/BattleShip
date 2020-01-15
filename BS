@@ -1,0 +1,41 @@
+# BattleShip
+The humble Battleship
+var  guess = false;
+var guesses, key1, key2, key3, key4, numberKey, stats1,stats2, score, miss;
+var dontAllowed = 0, allowed = 0;
+    
+    numberKey = Math.floor((Math.random() * 14) + 1);
+    key1 = numberKey;
+    key2 = key1 + 1;
+    key3 = key2 + 1;
+    key4 = key3 + 1;
+    
+while(guess === false){    
+    guesses = prompt("Type a number, since that be 1 to 15");
+    
+    if(guesses < 1 || guesses > 15){
+        alert("Please, type a number valid!");
+    }else{
+        dontAllowed = (dontAllowed + 1);
+    }
+    
+    if(guesses == key1 || guesses == key2 || guesses == key3 || guesses == key4){
+        
+        alert("Well done, you're winner!");
+        
+        allowed = (allowed + 1);
+        
+        if (allowed === 4){
+            guess = true;
+        }
+    }else{
+        alert("Whoops, you miss!");
+    }
+    
+    miss = (guesses - 4);
+    score = parseInt((allowed * 100) / guesses);
+    stats1 = ("From " + guesses + " attempts, missed: " + miss + ", and got it right: " + allowed + ", being so your make progress was: " + score + "%");
+    stats2 = ("Numbers clicked on: " + key1 + ", " + key2 + ", " + key3 + ", " + key4);
+}
+alert(stats1);
+alert(stats2);

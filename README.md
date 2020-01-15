@@ -1,2 +1,0 @@
-# BattleShip
-The humble Battleship
